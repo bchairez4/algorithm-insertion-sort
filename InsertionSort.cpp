@@ -10,6 +10,7 @@
 *****************************************************************************/
 
 #include <vector>
+#include <utility>  //std::swap()
 
 template <class T>
 void InsertionSort(std::vector<T>& array) {
@@ -18,9 +19,7 @@ void InsertionSort(std::vector<T>& array) {
         int j = i;
 
         while ((j > 0) && (array[j-1] > array[j])) {
-            T temp = array[j];
-            array[j] = array[j-1];
-            array[j-1] = temp;
+            std::swap(array[j-1], array[j]);
 
             j = j-1;
         }
